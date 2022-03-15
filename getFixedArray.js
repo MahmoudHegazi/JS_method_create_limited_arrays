@@ -1,3 +1,4 @@
+
 const theCallback = (theArray, limit)=>{
   const check = theArray.length <= limit;
   return theArray.length;
@@ -19,7 +20,8 @@ function addPushEventListener(theArray, theCallback, limit){
   const arrLength = theCallback(theArray, e, limit);
   const acceptPush = (arrLength <= limit);
   if (!acceptPush){
-    console.log("sorry array only accept " + limit + " items");
+    const s = limit == 1 ? '' : 's';
+    console.log("sorry array only accept " + limit + " item"+s);
     theArray.pop();
   }
   // apply push or 
